@@ -2,9 +2,9 @@
 ######################################
 # Created By Golansho
 #
-# Date -
+# Date - 08/01/19
 #
-# Purpose : 
+# Purpose : for creating new users with validation
 #
 # Ver : 1.0.0
 ######################################
