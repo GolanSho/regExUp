@@ -12,10 +12,16 @@
 #set -x
 #######
 
-$bashusers=(grep [e-c][?]sh$ /etc/passwd |cut -d":" -f1)
+bashusers=($(egrep [b-e].sh$ /etc/passwd |cut -d":" -f1))
+#echo $bashusers
 
-if [ $bashusers == 1 ] ; then
+if [[ ! ${#bashusers[@]} = 1 ]];then
 
-	echo "those users use bash: $bashusers"
-		fi
+	echo "those users use bash:"
+	for user in ${bashusers[@]}
+		do
+			printf "%s\t" $user
+		done
+	echo " " 
+fi
 
