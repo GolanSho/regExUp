@@ -2,9 +2,9 @@
 ######################################
 # Created By Golansho
 #
-# Date -
+# Date - 13/01/19
 #
-# Purpose : 
+# Purpose : Giving a list of users which using bash shell
 #
 # Ver : 1.0.0
 ######################################
@@ -12,9 +12,13 @@
 #set -x
 #######
 
-bashusers=($(egrep [b-e].sh$ /etc/passwd |cut -d":" -f1))
-#echo $bashusers
+### Prep
+# creating var for output
 
+bashusers=($(egrep [b-e].sh$ /etc/passwd |cut -d":" -f1))
+
+### Exec
+# Running with Con
 if [[ ! ${#bashusers[@]} = 1 ]];then
 
 	echo "those users use bash:"
@@ -23,5 +27,7 @@ if [[ ! ${#bashusers[@]} = 1 ]];then
 			printf "%s\t" $user
 		done
 	echo " " 
+### End
+#Closing Con
 fi
 
